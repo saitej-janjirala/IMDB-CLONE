@@ -1,0 +1,2 @@
+rootProject.name = "IMDB CLONE"
+include ':app'

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@color/white"
+    android:padding="8dp">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/res_img_card"
+        android:layout_width="90dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        app:cardCornerRadius="4dp">
+        <ImageView
+            android:id="@+id/result_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_error_24"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@id/res_img_card"
+        android:layout_margin="12dp"
+        android:textSize="16sp"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:textAlignment="textStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toEndOf="@+id/res_img_card"
+        android:layout_marginStart="12dp"
+        android:textSize="14sp"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:textAlignment="textStart"
+        android:drawableTint="@color/page_color"
+        app:drawableStartCompat="@drawable/ic_baseline_star_border_24" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/res_img_card"
+        android:layout_marginTop="4dp"
+        android:background="@color/primaryLightColor"/>
+
+</RelativeLayout>
