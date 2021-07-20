@@ -104,20 +104,18 @@ public class SearchFragment extends Fragment implements SearchAdapter.onSearchRe
                     }
                 })
                 .distinctUntilChanged()
-                .switchMap(new Function<String, ObservableSource<?>>() {
+                .switchMap(new Function<String, ObservableSource<SearchResult>>() {
                     @Override
-                    public ObservableSource<?> apply(String s) throws Throwable {
-                        searchViewModel.getData(s);
-                        return Observable.just("called");
+                    public ObservableSource<SearchResult> apply(String s) throws Throwable {
+                        return searchViewModel.imdbRepo.getSearchResults(s,searchViewModel.searchResultMutableLiveData);
                     }
                 })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<Object>() {
-                    @Override
-                    public void accept(Object o) throws Throwable {
+                .subscribe(response->{
+                    searchViewModel.searchResultMutableLiveData.postValue(response);
+                },throwable -> {
 
-                    }
                 });
 
     }

@@ -20,6 +20,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.ObservableSource;
 import io.reactivex.rxjava3.core.SingleSource;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.functions.Function;
@@ -81,22 +82,24 @@ public class IMDBRepo {
         }
     }
 
-    public void getSearchResults(String query, MutableLiveData<SearchResult> mLiveData) {
+    public ObservableSource<SearchResult> getSearchResults(String query, MutableLiveData<SearchResult> mLiveData) {
         try {
-            compositeDisposable.add(
-                    apiService.getSearchResults(BuildConfig.API_KEY, query, true)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(response -> {
-                                mLiveData.postValue(response);
-                                Log.i("response", response + "");
-                            }, throwable -> {
-
-                            })
-            );
+            return apiService.getSearchResults(BuildConfig.API_KEY,query,true);
+//            return compositeDisposable.add(
+//                    apiService.getSearchResults(BuildConfig.API_KEY, query, true)
+//                            .subscribeOn(Schedulers.io())
+//                            .observeOn(AndroidSchedulers.mainThread())
+//                            .subscribe(response -> {
+//                                mLiveData.postValue(response);
+//                                Log.i("response", response + "");
+//                            }, throwable -> {
+//
+//                            })
+//            );
         } catch (Exception e) {
             Log.i("now playing exception", e.getMessage());
         }
+        return null;
     }
 
     private void saveResultsDatabase(String type, List<Result> results, MutableLiveData<List<Result>> nowPlaying, MutableLiveData<List<Result>> populars) {

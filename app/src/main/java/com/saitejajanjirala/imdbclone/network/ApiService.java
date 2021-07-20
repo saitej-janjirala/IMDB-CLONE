@@ -8,6 +8,7 @@ import com.saitejajanjirala.imdbclone.models.Popular;
 import com.saitejajanjirala.imdbclone.models.SearchResult;
 import com.saitejajanjirala.imdbclone.utils.Constants;
 
+import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -26,7 +27,7 @@ public interface ApiService {
     );
 
     @GET(Constants.SEARCH_MULTI)
-    Single<SearchResult> getSearchResults(
+    Observable<SearchResult> getSearchResults(
             @Query("api_key") String apiKey,
             @Query("query") String query,
             @Query("include_adult") Boolean includeAdult
