@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">IMDB CLONE</string>
-    <string name="now_playing">Now Playing</string>
-    <string name="trending">Trending</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="trending">Trending</string>
     <string name="search_for_movies_tv_shows_and_more">Search for Movies</string>
     <string name="a">A</string>
     <string name="genres">Genres:</string>
@@ -17,7 +17,7 @@
     <string name="delete_all">Delete All</string>
     <string name="no_bookmarks_found_nplease_bookmark">No bookmarks found\nplease Bookmark</string>
     <string name="search">Search</string>
-    <string name="some_error_occured">Some Error Occured</string>
+    <string name="some_error_occured">Some Error Occurred</string>
     <string name="retry">Retry</string>
     <string name="bookmark_this">BookMark This</string>
 </resources>
