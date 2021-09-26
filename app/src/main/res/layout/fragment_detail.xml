@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_color"
+    tools:context=".ui.detail.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="12dp"
+            android:background="@color/primaryLightColor">
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:padding="4dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circle_white"
+                android:src="@drawable/ic_back"
+                android:layout_margin="4dp"/>
+            <TextView
+                android:id="@+id/top_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/back_button"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:maxLines="1"
+                tools:text="Bahubali"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/gradientup"
+            app:layout_constraintBottom_toBottomOf="@+id/cover_image" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mid_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cover_image">
+
+            <ImageView
+                android:id="@+id/poster_image"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_margin="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/generes_recyclerview"
+                app:layout_constraintStart_toStartOf="@id/poster_image"
+                app:layout_constraintTop_toBottomOf="@id/poster_image"
+                tools:text="Bahubali" />
+
+            <TextView
+                android:id="@+id/rating_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Rating :-"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_baseline_star_border_24"
+                app:layout_constraintStart_toEndOf="@id/rating_heading"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rating_heading"
+                tools:text="8.5" />
+            <TextView
+                android:id="@+id/voters_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="Voters :-"
+                android:padding="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rating"
+                />
+
+            <TextView
+                android:id="@+id/voters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/voters_heading"
+                app:layout_constraintStart_toEndOf="@id/voters_heading"
+                tools:text="86,455" />
+
+            <TextView
+                android:id="@+id/genre_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/poster_image"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/genres"
+                android:padding="4dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/generes_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/poster_image"
+                app:layout_constraintTop_toBottomOf="@id/genre_heading"
+                app:layout_constraintBottom_toBottomOf="@+id/poster_image"
+                tools:listitem="@layout/genre_item" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/overview_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="@string/overview"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/mid_layout"/>
+        <TextView
+            android:id="@+id/over_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/overview_heading"
+            android:layout_marginTop="4dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:id="@+id/bookmark_this"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/over_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="8dp"
+            android:textColor="@color/page_color"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:visibility="gone"
+            android:textAlignment="center"
+            android:text="@string/bookmark_this"
+            android:background="@color/secondaryColor"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

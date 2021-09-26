@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/janji/StudioProjects/IMDBCLONE/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/janji/StudioProjects/IMDBCLONE/app/src/main/res/layout/book_marked_item.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/janji/StudioProjects/IMDBCLONE/app/src/main/res/layout/fragment_book_mark.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/janji/StudioProjects/IMDBCLONE/app/src/main/res/layout/fragment_detail.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/janji/StudioProjects/IMDBCLONE/app/src/main/res/layout/fragment_home.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/janji/StudioProjects/IMDBCLONE/app/src/main/res/layout/fragment_search.xml" value="0.144" />
         <entry key="..\:/Users/janji/StudioProjects/IMDBCLONEKotlin/app/src/main/res/drawable/gradientup.xml" value="0.2703125" />
         <entry key="..\:/Users/janji/StudioProjects/IMDBCLONEKotlin/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/janji/StudioProjects/IMDBCLONEKotlin/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />
