@@ -1,6 +1,8 @@
 # IMDB-CLONE
 
-A simple imdb clone using JAVA,MVVM with searching and bookmarking ability with offline caching ability
+A simple imdb clone using KOTLIN,MVVM with searching and bookmarking ability with offline caching ability
+
+Libraries used:- Kotlin Coroutines,Room Database,Retrofit.
 
 
 
